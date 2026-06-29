@@ -25,8 +25,8 @@ jobs:
         run: cd csharp && dotnet restore
 
       - name: Build project
-        run: dotnet build --no-restore --configuration Release -warnaserror # warnaserror: Treat warnings as errors
+        run: cd csharp && dotnet build --no-restore --configuration Release -warnaserror # warnaserror: Treat warnings as errors
       
       - name: Test
-        run: dotnet test --no-build --verbosity normal
+        run: cd csharp && dotnet test --no-build --verbosity normal
 
