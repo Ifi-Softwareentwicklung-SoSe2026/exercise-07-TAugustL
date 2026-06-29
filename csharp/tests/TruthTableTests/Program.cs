@@ -1,16 +1,2 @@
-﻿public class MyAwesomeTestSuite
-{
-    [Fact]
-    public void MyAwesomeTest()
-    {
-        // Arrange
-        int a = 2;
-        int b = 3;
-
-        // Act
-        int result = a + b;
-
-        // Assert
-        Assert.Equal(5, result);
-    }
-}
+﻿// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
