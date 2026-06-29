@@ -27,6 +27,6 @@ jobs:
       - name: Build project
         run: dotnet build --no-restore --configuration Release -warnaserror # warnaserror: Treat warnings as errors
       
-      - name: I don't know
+      - name: Professional Test
         run: dotnet test
 
