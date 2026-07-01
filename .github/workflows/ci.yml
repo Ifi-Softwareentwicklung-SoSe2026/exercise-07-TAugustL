@@ -4,9 +4,7 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ "**" ]
 
 jobs:
   build-and-test:
@@ -21,9 +19,15 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
+      - name: xUnit install
+        run: dotnet new install xunit.v3.templates
+
       - name: Restore dependencies
-        run: dotnet restore
+        run: cd csharp && dotnet restore
 
       - name: Build project
-        run: dotnet build --no-restore --configuration Release -warnaserror # warnaserror: Treat warnings as errors
+        run: cd csharp && dotnet build --no-restore --configuration Release -warnaserror # warnaserror: Treat warnings as errors
+      
+      - name: Test
+        run: cd csharp && dotnet test --verbosity normal
 
