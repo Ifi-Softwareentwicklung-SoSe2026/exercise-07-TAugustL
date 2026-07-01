@@ -18,4 +18,8 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\LogischeAusdrücke\LogischeAusdrücke.csproj" />
+  </ItemGroup>
+
 </Project>
