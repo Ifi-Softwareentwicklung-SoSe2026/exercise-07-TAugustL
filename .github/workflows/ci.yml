@@ -19,6 +19,9 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
+      - name: xUnit install
+        run: dotnet new install xunit.v3.templates
+
       - name: Restore dependencies
         run: cd csharp && dotnet restore
 
